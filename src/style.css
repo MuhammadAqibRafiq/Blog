@@ -1,4 +1,4 @@
-/* CSS Custom Properties Definitions */
+
 
 :root {
   --maxWidth-none: "none";
@@ -45,7 +45,7 @@
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
   --lineHeight-relaxed: 1.625;
-  /* 1.200 Minor Third Type Scale */
+
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.2rem;
@@ -84,7 +84,9 @@ body {
 }
 
 footer {
-  padding: var(--spacing-6) var(--spacing-0);
+  /* padding: var(--spacing-6) var(--spacing-0); */
+  padding:var(--spacing-0);
+
 }
 
 hr {
@@ -243,7 +245,7 @@ a:focus {
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+  /* padding: var(--spacing-10) var(--spacing-5); */
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -288,7 +290,7 @@ a:focus {
 
 .bio {
   display: flex;
-  margin-bottom: var(--spacing-16);
+  /* margin-bottom: var(--spacing-16); */
 }
 
 .bio p {
@@ -330,4 +332,4 @@ a:focus {
   ol {
     list-style-position: inside;
   }
-}
+} 

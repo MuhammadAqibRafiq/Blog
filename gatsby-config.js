@@ -1,32 +1,44 @@
+const dotenv = require('dotenv')
+
+if (process.env.NODE_ENV !== "production") {
+    dotenv.config() // Initialize .env
+  }
+
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    // title: `Gatsby Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Aqib Rafiq`,
+      summary: `GATSBY DEVELOPER`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `Aqib`,
     },
   },
+
+    flags: {
+      DEV_SSR: false,
+    },
+
   plugins: [
     `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/blog`,
+    //     name: `blog`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -112,18 +124,35 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Blog`,
+        short_name: `Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        display: `standalone`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
+
     `gatsby-plugin-react-helmet`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    {
+      resolve: 'gatsby-plugin-sw',
+      options: {
+        swPath: 'src/sw.js', // Default to 'src/sw.js'
+      },
+    },
+
+    {
+      resolve: `gatsby-source-contentful`,
+            options: {
+             spaceId: `ndjfm52ia9dd`,
+             accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+             }
+    },
+    // // rich text transformer plugin
+    // `@contentful/gatsby-transformer-contentful-richtext`,
+
   ],
 }
