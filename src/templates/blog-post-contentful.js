@@ -24,7 +24,7 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
           description={post.subtitle}
         />
         <article
-          className="blog-post"
+          className="blog-post p-2"
           itemScope
           itemType="http://schema.org/Article"
         >
