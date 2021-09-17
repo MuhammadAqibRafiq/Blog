@@ -22,10 +22,6 @@ LIVE LINK : https://bootcamp2020.netlify.app/
 
  <img src="https://github.com/MuhammadAqibRafiq/Blog/blob/main/static/desktop.png" width="1000" />
  </h1>
- 
-<h1>DESKTOP</h1>
- 
- <img src="https://github.com/MuhammadAqibRafiq/Covid19-Tracker-PWA/blob/main/static/desktop.png" width="1000" />
 
  
 <h1>MOBILE</h1>
